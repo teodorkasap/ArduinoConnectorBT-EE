@@ -111,7 +111,7 @@ public class Ardcon extends AppCompatActivity {
         bta = BluetoothAdapter.getDefaultAdapter();
 
         //if bluetooth is not enabled then create Intent for user to turn it on
-        if (!bta.isEnabled()) {
+        if (bta!=null && !bta.isEnabled()) {
             Intent enableBTIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(enableBTIntent, REQUEST_ENABLE_BT);
         } else {
